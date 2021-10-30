@@ -9,9 +9,10 @@ public class MyService implements Service {
 
     /**
      * @param pName name to print in s. console
+     * @return
      */
     @Override
-    public void sayHello(final String pName) {
-        log.info("Welcome to spring integration with zakaria/ " + pName);
+    public String sayHello(final String pName) {
+        return "Welcome to spring integration with zakaria/ " + pName;
     }
 }

@@ -1,9 +1,12 @@
 package com.example.demo.services;
 
+import org.springframework.integration.annotation.Gateway;
+
 public interface Service {
 
     /**
      * Abstraction
      */
-    void sayHello(final String pName);
+    @Gateway(requestChannel = "channel")
+    String sayHello(final String pName);
 }

@@ -6,10 +6,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.integration.channel.DirectChannel;
+import org.springframework.integration.config.EnableIntegration;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
 
 @Configuration
+@EnableIntegration
 public class SIConfiguration {
 
 
@@ -25,7 +27,6 @@ public class SIConfiguration {
     public MessageChannel channel() {
         return new DirectChannel();
     }
-
 
     @ServiceActivator(inputChannel = "channel")
     public void handle(Message pMessage) {
